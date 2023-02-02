@@ -1,0 +1,44 @@
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.exe
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.deps.json
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.runtimeconfig.json
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.runtimeconfig.dev.json
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.dll
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.pdb
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.Views.dll
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.Views.pdb
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.AssemblyInfo.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorAssemblyInfo.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorAssemblyInfo.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\Stephs Shop.StaticWebAssets.Manifest.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\Stephs Shop.StaticWebAssets.xml
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\scopedcss\bundle\Stephs Shop.styles.css
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.TagHelpers.input.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.TagHelpers.output.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorCoreGenerate.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorTargetAssemblyInfo.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorTargetAssemblyInfo.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.Views.pdb
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.dll
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.pdb
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.genruntimeconfig.cache
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.csproj.CopyComplete
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Footer.cshtml.g.cs
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
