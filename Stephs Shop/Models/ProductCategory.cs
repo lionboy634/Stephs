@@ -9,7 +9,7 @@ namespace Stephs_Shop.Models
     public class ProductCategory
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
     }

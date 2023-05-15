@@ -20,7 +20,15 @@ namespace Stephs_Shop
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.
+                    ConfigureLogging((hostingContext, logging) =>
+                    {
+                        logging.AddConfiguration(
+                            hostingContext.Configuration.GetSection("Logging"));
+                        logging.AddConsole();
+                        logging.AddDebug();
+                    }).
+                    UseStartup<Startup>();
                 });
     }
 }

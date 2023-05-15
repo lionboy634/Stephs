@@ -42,3 +42,159 @@ C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Micro
 C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\USER\source\repos\Stephs Shop\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.StaticWebAssets.xml
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.exe
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.deps.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.runtimeconfig.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.runtimeconfig.dev.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.pdb
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.Views.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Stephs Shop.Views.pdb
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.csproj.AssemblyReference.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.AssemblyInfoInputs.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.AssemblyInfo.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.csproj.CoreCompileInputs.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorAssemblyInfo.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorAssemblyInfo.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\Stephs Shop.StaticWebAssets.Manifest.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\Stephs Shop.StaticWebAssets.Pack.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.Stephs Shop.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.Stephs Shop.props
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.Stephs Shop.props
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.Stephs Shop.props
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.TagHelpers.input.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.TagHelpers.output.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorCoreGenerate.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Footer.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorTargetAssemblyInfo.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.RazorTargetAssemblyInfo.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.Views.pdb
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.csproj.CopyComplete
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.pdb
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Stephs Shop.genruntimeconfig.cache
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\MediatR.Contracts.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Admin\Index.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Admin\ManageUser.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Office\Index.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Office\Dashboard.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Office\CustomerView.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Office\Product.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Transaction\OrderView.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Transaction\Index.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Step2.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\bin\Debug\netcoreapp3.1\bundleconfig.json
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Pages\_Layout.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\poseidon\source\repos\Stephs\Stephs Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\cart.cshtml.g.cs

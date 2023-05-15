@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\source\\repos\\Stephs Shop\\Stephs Shop\\Stephs Shop.csproj": {}
+    "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\source\\repos\\Stephs Shop\\Stephs Shop\\Stephs Shop.csproj": {
+    "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Stephs Shop\\Stephs Shop\\Stephs Shop.csproj",
+        "projectUniqueName": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj",
         "projectName": "Stephs Shop",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\Stephs Shop\\Stephs Shop\\Stephs Shop.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\Stephs Shop\\Stephs Shop\\obj\\",
+        "projectPath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj",
+        "packagesPath": "C:\\Users\\poseidon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\poseidon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,9 +40,51 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.3, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.104, )"
             }
           },
           "imports": [
@@ -51,7 +93,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

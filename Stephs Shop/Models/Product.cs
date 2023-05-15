@@ -7,13 +7,16 @@ namespace Stephs_Shop.Models
 {
     public class Product
     {
-        public Guid Id { get; set; }
-        public decimal Price { get; set; }
-        public string Description { get; set; }
-        public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset ModifiedAt { get; set; }
-        public DateTimeOffset DeletedAt { get; set; }
-        public bool IsDeleted { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public decimal price { get; set; }
+        public string description { get; set; }
+        public string image_url { get; set; }
+        public int inventory_id { get; set; }
+        public int category_id { get; set; }
+        public DateTimeOffset created_at { get; set; }
+        public DateTimeOffset modified_at { get; set; }
+        public DateTimeOffset deleted_at { get; set; }
 
     }
 }

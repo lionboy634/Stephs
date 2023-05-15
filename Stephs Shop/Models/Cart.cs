@@ -8,5 +8,6 @@ namespace Stephs_Shop.Models
     public class Cart
     {
         public string id { get; set; }
+        public Product product { get; set; }
     }
 }
