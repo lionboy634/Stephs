@@ -12,7 +12,6 @@ using StackExchange.Redis;
 using Stephs_Shop.Filters;
 using Stephs_Shop.Models.Entities;
 using Stephs_Shop.Models.Options;
-using Stephs_Shop.NewFolder;
 using Stephs_Shop.Repositories;
 using Stephs_Shop.Services;
 using System;
@@ -24,7 +23,7 @@ using System.Threading.Tasks;
 
 namespace Stephs_Shop
 {
-    public class Startup
+	public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -66,7 +65,7 @@ namespace Stephs_Shop
             services.AddScoped<IFileService, FileService>();
 
 
-            var connection = ConnectionMultiplexer.Connect("localhost");
+            var connection = ConnectionMultiplexer.Connect("host.docker.internal");
             services.AddSingleton<IConnectionMultiplexer>(connection);
             services.AddSingleton<MyNgpsqlLoggingProvider>();
             services.AddSingleton<CustomNpgsqlLogger>();

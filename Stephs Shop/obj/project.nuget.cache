@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iMHspR6QcOMXaOsqpPR+Gr+Y5w+wWkO4xszHuYQQYlgIzE6LkjpJlLvSMmmtfba8nB7rLC5h3S11U+AQ5b3U6Q==",
+  "dgSpecHash": "XK1xW4CQ5cCzCz1XOZ3SKbj8pNbrMo/zqiaBKvIEU1tlH+rYQeDHJwJ5L+UlE4CVKcqXJfnosBicHJCKL4Fj5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj",
+  "projectFilePath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs_Shop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\poseidon\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\poseidon\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",

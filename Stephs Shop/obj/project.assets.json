@@ -7618,9 +7618,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj",
-      "projectName": "Stephs Shop",
-      "projectPath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs Shop.csproj",
+      "projectUniqueName": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs_Shop.csproj",
+      "projectName": "Stephs_Shop",
+      "projectPath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\Stephs_Shop.csproj",
       "packagesPath": "C:\\Users\\poseidon\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\poseidon\\source\\repos\\Stephs\\Stephs Shop\\obj\\",
       "projectStyle": "PackageReference",

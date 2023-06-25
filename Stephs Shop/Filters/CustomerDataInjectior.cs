@@ -8,7 +8,7 @@ using Stephs_Shop.Repositories;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Stephs_Shop.NewFolder
+namespace Stephs_Shop.Filters
 {
 	public class CustomerDataInjectior : IAsyncActionFilter
 	{
@@ -28,7 +28,7 @@ namespace Stephs_Shop.NewFolder
 
 		public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
 		{
-			var redis = _connectionMultiplexer.GetDatabase( db : -1);
+			var redis = _connectionMultiplexer.GetDatabase(db: -1);
 			var customerData = await redis.StringGetAsync("customers");
 			var customerOrders = await redis.StringGetAsync("customer_order");
 
@@ -51,8 +51,8 @@ namespace Stephs_Shop.NewFolder
 			throw new System.NotImplementedException();
 		}
 
-		
 
-		
+
+
 	}
 }
