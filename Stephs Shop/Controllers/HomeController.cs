@@ -71,6 +71,10 @@ namespace Stephs_Shop.Controllers
         public async Task<IActionResult> Cart()
         {
             ViewData["Title"] = "Cart.Page";
+            var current_user = await GetCurrentUser();
+            if(current_user == null) return RedirectToAction(nameof(Login), "Home");
+
+            
 
             return View();
         }

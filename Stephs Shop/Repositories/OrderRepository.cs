@@ -14,7 +14,7 @@ namespace Stephs_Shop.Repositories
 		Task UpdateOrderDeliveryStatus(int orderId);
 		Task<IEnumerable<Order>> GetAllOrders(int limit = 100);
 		Task<Order> GetOrderById(string id);
-		Task<string> AddOrderDetail(string user, decimal total);
+		Task<long> AddOrderDetail(string user, decimal total);
 		Task AddOrderItem();
 
     }
@@ -125,7 +125,7 @@ namespace Stephs_Shop.Repositories
 			}
 		}
 
-		public async Task<string> AddOrderDetail(string user, decimal total)
+		public async Task<long> AddOrderDetail(string user, decimal total)
 		{
 			using(var connection = await GetConnection())
 			{
@@ -134,7 +134,7 @@ namespace Stephs_Shop.Repositories
 						into public.customer_order_details(user_id, total, created_at)
 						VALUES(@User, @Total, NOW()) 
 						returning user_id";
-				return await connection.ExecuteScalarAsync<string>(query, new
+				return await connection.ExecuteScalarAsync<long>(query, new
 				{
 					User = user,
 					Total = total

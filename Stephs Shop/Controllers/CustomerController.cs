@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using RestSharp;
 using Stephs_Shop.Models;
 using Stephs_Shop.Models.Entities;
+using Stephs_Shop.Models.Options;
 using Stephs_Shop.Repositories;
 using Stephs_Shop.Services;
 using System;
@@ -14,6 +18,7 @@ using System.Transactions;
 
 namespace Stephs_Shop.Controllers
 {
+	[Authorize]
 	public class CustomerController : BaseController
 	{
 		private readonly ICustomerRepository _customerRepository;
@@ -23,13 +28,18 @@ namespace Stephs_Shop.Controllers
 		private readonly ILogger<CustomerController> _logger;
 		private readonly IEmailSender _emailSender;
 		private readonly HttpClient _client;
+		private readonly ITransactionRepository _transactionRepository;
+		private readonly MicroServiceOption _microServiceOption;
 		public CustomerController(IOrderRepository orderRepository,
 			ICartRepository cartRepository,
 			IProductRepository productRepository, 
 			ILogger<CustomerController> logger,
 			IEmailSender emailSender,
 			UserManager<User> userManager,
-			SignInManager<User> signInManager) : base(userManager, signInManager)
+			SignInManager<User> signInManager,
+			ICustomerRepository customerRepository,
+			ITransactionRepository transactionRepository,
+			IOptions<MicroServiceOption> microServiceOption) : base(userManager, signInManager)
 		{
 			_orderRepository = orderRepository;
 			this.cartRepository = cartRepository;
@@ -37,6 +47,9 @@ namespace Stephs_Shop.Controllers
 			_logger = logger;
 			_emailSender = emailSender;
 			_client = new HttpClient();
+			_customerRepository = customerRepository;
+			_transactionRepository = transactionRepository;
+			_microServiceOption = microServiceOption.Value;
 		}
 		public IActionResult Index()
 		{
@@ -74,32 +87,29 @@ namespace Stephs_Shop.Controllers
 					return BadRequest("Amount paid is less the price of products");
 				}
 				
-				using (var transaction = new TransactionScope())
+				using (var transaction = new TransactionScope(TransactionScopeOption.Required , new TransactionOptions{	IsolationLevel = IsolationLevel.ReadUncommitted}))
 				{
 					try
 					{
-						RestClient restClient = new RestClient();
-						//make payment 
+						RestClient restClient = new RestClient(_microServiceOption.FlutterWaveUrl);
+						var request = new RestRequest(string.Empty, Method.Post);
+						request.AddHeader("Authorization", $"Bearer");
 
-						//add cart
-
-
-
-
-						using(TransactionScope transactionScope = new TransactionScope())
+						RestResponse response = restClient.Execute(request);
+						var response_content = JsonConvert.DeserializeObject<RestResponse>(response.Content);
+						if (!response_content.IsSuccessStatusCode)
 						{
+							
+						}
+						
                             //add orders
-                            var order_id = await _orderRepository.AddOrderDetail(user.Id, 0);	
-                            await _orderRepository.AddOrderItem();
+                       var order_id = await _orderRepository.AddOrderDetail(user.Id, 0);	
+                       await _orderRepository.AddOrderItem();
 
-                            //create transaction for payment
+						//create transaction for payment
+						var transactionReference = Guid.NewGuid();
+						await _transactionRepository.CreateTransaction(transactionReference, user.Id, order_id).ConfigureAwait(false);
 
-
-
-                            //
-
-
-                        }
 
 
                     }
@@ -113,11 +123,8 @@ namespace Stephs_Shop.Controllers
 					return StatusCode(200, new {});
 				}
 			}
-
 			return BadRequest();
 			
-			
-
 		}
 	}
 }

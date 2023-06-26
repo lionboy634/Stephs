@@ -53,6 +53,7 @@ namespace Stephs_Shop
 
             services.Configure<InfoBipOptions>(Configuration.GetSection("InfoBip"));
             services.Configure<ConnectionStringOptions>(Configuration.GetSection("ConnectionStrings"));
+            services.Configure<MicroServiceOption>(Configuration.GetSection("MicroServiceOption"));
 
 
             services.AddScoped<IPgRepository, PgRepository>();
@@ -65,7 +66,7 @@ namespace Stephs_Shop
             services.AddScoped<IFileService, FileService>();
 
 
-            var connection = ConnectionMultiplexer.Connect("host.docker.internal");
+            var connection = ConnectionMultiplexer.Connect("localhost");
             services.AddSingleton<IConnectionMultiplexer>(connection);
             services.AddSingleton<MyNgpsqlLoggingProvider>();
             services.AddSingleton<CustomNpgsqlLogger>();

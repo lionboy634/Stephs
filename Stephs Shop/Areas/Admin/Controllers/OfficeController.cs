@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.Web.CodeGeneration;
 using Newtonsoft.Json;
+using StackExchange.Redis;
 using Stephs_Shop.Filters;
 using Stephs_Shop.Models;
 using Stephs_Shop.Repositories;
@@ -26,19 +27,22 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		private readonly IReportRepository _reportRepository;
 		private readonly IFileService _fileService;
 		private readonly ILogger<OfficeController> _logger;
+		private readonly IConnectionMultiplexer _connectionMultiplexer;
 
 		private readonly ICustomerRepository _customerRepository;
 		public OfficeController(IProductRepository productRepository, 
 			IReportRepository reportRepository,
 			IFileService fileService,
 			ICustomerRepository customerRepository,
-			ILogger<OfficeController> logger)
+			ILogger<OfficeController> logger,
+			IConnectionMultiplexer connectionMultiplexer)
 		{
 			_productRepository = productRepository;
 			_reportRepository = reportRepository;
 			_fileService= fileService;
 			_logger = logger;
 			_customerRepository = customerRepository;
+			_connectionMultiplexer = connectionMultiplexer;
 		}
 
 
@@ -125,8 +129,13 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> SearchCustomer(string searchTerm)
 		{
-			ViewBag.Customers = await _customerRepository.FetchCustomers(searchTerm).ConfigureAwait(false);
-			return View(nameof(CustomerView));
+			if(ModelState.IsValid)
+			{
+				ViewBag.Customers = await _customerRepository.FetchCustomers(searchTerm).ConfigureAwait(false);
+				return View(nameof(CustomerView));
+
+			}
+			return View();
 		}
 
 		public async Task<IActionResult> AdvancedSearch(string address, int customerId, DateTime startDate, DateTime endDate )
