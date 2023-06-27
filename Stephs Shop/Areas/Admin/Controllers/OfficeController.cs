@@ -66,6 +66,8 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 
 
 		[HttpPost]
+		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
+		[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
 		public async Task<IActionResult> AddProduct(string name, string description, IFormFile image , decimal price)
 																																																																																																																																							{
 			if (ModelState.IsValid)
@@ -107,7 +109,7 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 				return Ok("Product Added successfully");
 			}
 
-			return BadRequest();
+			return BadRequest("Error While Adding New Product");
 		}
 
 

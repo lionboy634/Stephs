@@ -54,7 +54,7 @@ namespace Stephs_Shop.Controllers
 
         }
 
-        private enum sortBy
+        private enum SortBy
         {
             ASC,
             DESC

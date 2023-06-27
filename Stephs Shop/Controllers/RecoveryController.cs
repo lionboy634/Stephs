@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Stephs_Shop.Models.Entities;
 using Stephs_Shop.Services;
@@ -58,9 +59,12 @@ namespace Stephs_Shop.Controllers
 		}
 
 		[HttpPost]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status200OK)]
 		public async Task<IActionResult> ResetPassword(string id, string password)
 		{
 			var user = await GetCurrentUser();
+			if (user == null) return NotFound();
 			
 			await _userManager.ResetPasswordAsync(user, "", password);
 
@@ -69,16 +73,33 @@ namespace Stephs_Shop.Controllers
 
 
 
-		[HttpPost]
+		[HttpDelete]
 		public async Task<IActionResult> DeleteAccount()
 		{
 			var user = await GetCurrentUser();
-
+			if (user == null) return RedirectToAction("Login", "Home");
 			await _userManager.DeleteAsync(user);
-
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Index", "Home");
 		}
 
+		[HttpPost]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+		public async Task<IActionResult> UpdateProfile(string email)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest("An Error Occured. Please Try Again");
+			}
+			else
+			{
+				var user = await GetCurrentUser();
+				user.Email = email;
+				await _userManager.UpdateAsync(user);
+
+				return Ok();
+			}
+		}
 
 		
 	}

@@ -57,6 +57,7 @@
 
   <ItemGroup>
     <None Remove="..\.dockerignore" />
+    <None Remove="Views\Home\Index.cshtml~RF26a00b3b.TMP" />
   </ItemGroup>
 
 </Project>

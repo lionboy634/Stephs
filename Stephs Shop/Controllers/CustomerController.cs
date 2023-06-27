@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -58,6 +59,9 @@ namespace Stephs_Shop.Controllers
 
 
 		[HttpPost]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		public async Task<IActionResult> MakeTransaction(Product[] products, decimal amount, int quantity, decimal price)
 		{
 			//do checks for parameter
@@ -71,15 +75,12 @@ namespace Stephs_Shop.Controllers
 				decimal sum = 0;
 				foreach(var item in products)
 				{
-					
 					var product = await _productRepository.GetProduct(item.id).ConfigureAwait(false);
-					//remove this
 					if(product == null)
 					{
-						return BadRequest("Product doesnt exists");
+						return NotFound("Product Not Found");
 					}
 					sum += item.price;
-
 				}
 				//decimal sum = product.Select(c=>c.price).Sum();
 				if(amount < sum)
@@ -87,10 +88,11 @@ namespace Stephs_Shop.Controllers
 					return BadRequest("Amount paid is less the price of products");
 				}
 				
-				using (var transaction = new TransactionScope(TransactionScopeOption.Required , new TransactionOptions{	IsolationLevel = IsolationLevel.ReadUncommitted}))
+				using (var scope = new TransactionScope(TransactionScopeOption.Required , new TransactionOptions{	IsolationLevel = IsolationLevel.ReadUncommitted}))
 				{
 					try
 					{
+						_logger.LogInformation("Transaction In Progress");
 						RestClient restClient = new RestClient(_microServiceOption.FlutterWaveUrl);
 						var request = new RestRequest(string.Empty, Method.Post);
 						request.AddHeader("Authorization", $"Bearer");
@@ -99,7 +101,8 @@ namespace Stephs_Shop.Controllers
 						var response_content = JsonConvert.DeserializeObject<RestResponse>(response.Content);
 						if (!response_content.IsSuccessStatusCode)
 						{
-							
+							_logger.LogError($"Error: {response_content.ErrorMessage}");
+							return BadRequest($"Error: {response_content.ErrorMessage} ");
 						}
 						
                             //add orders
@@ -111,16 +114,16 @@ namespace Stephs_Shop.Controllers
 						await _transactionRepository.CreateTransaction(transactionReference, user.Id, order_id).ConfigureAwait(false);
 
 
-
+						scope.Complete();
                     }
 					catch (Exception ex)
 					{
 						_logger.LogCritical($"Error Message: {ex.Message}");
-						throw new Exception(ex.Message);              
-
+						//throw new Exception(ex.Message);
+						return BadRequest(ex.Message);
 					}
 
-					return StatusCode(200, new {});
+					return Ok();
 				}
 			}
 			return BadRequest();

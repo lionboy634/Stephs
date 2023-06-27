@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Stephs_Shop.Repositories;
 using System;
@@ -12,11 +13,12 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 	{
 		private readonly IOrderRepository _orderRepository;
 		private readonly ILogger _logger;
-		public TransactionController(IOrderRepository orderRepository, ILogger logger)
+		private readonly ITransactionRepository _transactionRepository;
+		public TransactionController(IOrderRepository orderRepository, ILogger logger, ITransactionRepository transactionRepository)
 		{
 			_orderRepository = orderRepository;
 			_logger = logger;
-
+			_transactionRepository = transactionRepository;
 		}
 
 
@@ -43,7 +45,10 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 
 
 
-		[HttpPost]
+		[HttpPut]
+		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
+		[ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
+		[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
 		public async Task<IActionResult> UpdateOrderDeliveryStatus(string transactionReference)
 		{
 			var order = await _orderRepository.GetOrderById(transactionReference);
@@ -53,13 +58,10 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 			}
 			if(order.Delivered)
 			{
-				return BadRequest("Order has been delivered. Cannot deliver a delivered object");
+				return BadRequest("Order Has Already Been Delivered");
 			}
-
 			await _orderRepository.UpdateOrderDeliveryStatus(order.Id);
-			
-
-			return Ok("Order Delivered");
+			return Ok("Order Delivery Status Updated");
 		}
 
 

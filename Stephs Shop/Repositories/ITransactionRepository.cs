@@ -30,12 +30,12 @@ namespace Stephs_Shop.Repositories
 				var query = @"
 					WITH new_transaction as (
 					INSERT 
-						INTO public.transaction (id, customer_id, transaction_date)
+						INTO public.transaction (id, customer_id, order_id)
 						VALUES()
 						returning *
 					)
 					INSERT INTO public.transaction_log 
-					SELECT * from new_transaction
+					SELECT customer_id, order_id from new_transaction
 					
 				";
 				return await  connection.ExecuteScalarAsync<Transaction>(query, new
