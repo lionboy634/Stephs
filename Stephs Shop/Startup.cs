@@ -54,7 +54,7 @@ namespace Stephs_Shop
             services.Configure<InfoBipOptions>(Configuration.GetSection("InfoBip"));
             services.Configure<ConnectionStringOptions>(Configuration.GetSection("ConnectionStrings"));
             services.Configure<MicroServiceOption>(Configuration.GetSection("MicroServiceOption"));
-
+            services.Configure<FileOption>(Configuration.GetSection("FileOption"));
 
             services.AddScoped<IPgRepository, PgRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();

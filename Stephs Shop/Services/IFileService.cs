@@ -21,13 +21,20 @@ namespace Stephs_Shop.Services
         }
         public void uploadFile(Binary FileContent)
         {
-			var filepath = Path.Combine("~/uploads/", FileContent.filename);
-			if (File.Exists(filepath))
+            try
             {
-                _logger.LogDebug("File already exists");
-                return;
+				var filepath = Path.Combine(Directory.GetCurrentDirectory(), @"Uploads", FileContent.filename);
+                if(!Directory.Exists(filepath))
+                {
+                    Directory.CreateDirectory(filepath);
+                }
+
+				File.WriteAllBytes(filepath, FileContent.filebytes);
+			}
+            catch(System.Exception ex)
+            {
+                _logger.LogError($"Upload file With Errors: {ex.Message}");
             }
-            File.WriteAllBytes(filepath , FileContent.filebytes);
         }
     }
 }

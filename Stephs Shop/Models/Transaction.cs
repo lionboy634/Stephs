@@ -10,5 +10,6 @@ namespace Stephs_Shop.Models
 		public long OrderId { get; set; }
 		public DateTime? CreatedAt { get; set; }
 		public DateTime? UpdatedAt { get; set; }
+		public DateTime? ReversedAt { get; set; }
 	}
 }

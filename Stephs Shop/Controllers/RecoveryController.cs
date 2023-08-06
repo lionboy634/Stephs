@@ -37,6 +37,8 @@ namespace Stephs_Shop.Controllers
 			emailMessage.To.Add(Email);
 			emailMessage.message = recoverpasswordUrl.ToString();
 			_emailSender.SendEmail(emailMessage);
+
+
 			return View();
 		}
 

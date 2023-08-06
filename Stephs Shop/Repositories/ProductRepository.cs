@@ -37,12 +37,12 @@ namespace Stephs_Shop.Repositories
             {
                 var query = @"
                     WITH new_product as(
-                        INSERT INTO public.product(name, image_url, price, description, category_id, inventory_id)
-                        VALUES(@Name, @Imageurl, @Price, @Description, @CategoryId, @InventoryId)  returning category_id
-                    );
-                    UPDATE TABLE public.product_inventory
-                    SET quantity = (select quantity + 1 from public.product_inventory where id = select category_id from new_product)
-                    WHERE id = (select category_id from new_product) ";
+                        INSERT INTO public.product(name, image_url, price,  category_id, inventory_id)
+                        VALUES(@Name, @Imageurl, @Price, 1, 1000)  returning *
+                    )
+                    UPDATE public.product_inventory
+                    SET quantity = (select quantity + 1 from public.product_inventory where id = (select inventory_id from new_product))
+                   WHERE id = (select inventory_id from new_product) ";
                 return await connection.ExecuteScalarAsync<int>(query, new
                 {
                     Name = product.name,

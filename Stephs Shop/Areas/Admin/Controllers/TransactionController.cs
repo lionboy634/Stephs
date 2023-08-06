@@ -39,7 +39,16 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> ReverseTransaction(string transactionId)
 		{
-			var transactionReference = GenerateReference("");
+			var transaction = await _transactionRepository.FetchTransaction(transactionId);
+			if (transaction == null)
+			{
+				return NotFound("Transaction Not Found");
+			}
+			else if (transaction.ReversedAt != null)
+			{
+				return BadRequest("Transaction Has Already Been Reversed");
+			}
+
 			return Ok();
 		}
 
@@ -49,19 +58,25 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
 		[ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
 		[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-		public async Task<IActionResult> UpdateOrderDeliveryStatus(string transactionReference)
+		public async Task<IActionResult> UpdateOrderStatus(string transactionReference)
 		{
 			var order = await _orderRepository.GetOrderById(transactionReference);
 			if(order == null)
 			{
 				return NotFound();
 			}
-			if(order.Delivered)
+			else if(order.Delivered)
 			{
 				return BadRequest("Order Has Already Been Delivered");
 			}
+			else if(order.DeletedAt != null)
+			{
+				return BadRequest("Order has been Trashed");
+			}
+
 			await _orderRepository.UpdateOrderDeliveryStatus(order.Id);
-			return Ok("Order Delivery Status Updated");
+
+			return Ok("Order Status Updated");
 		}
 
 

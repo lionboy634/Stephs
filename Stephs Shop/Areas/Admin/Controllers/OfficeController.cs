@@ -73,6 +73,7 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 			if (ModelState.IsValid)
 			{
 				var filename = image.FileName;
+				var filePath = Path.Combine("~/uploads", filename);
 				var content = filename.Split(".")[1];
 				var contentType = image.ContentType;
 				List<Binary> binary = new List<Binary>();
@@ -102,6 +103,7 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 					price = price,
 					name = name,
 					description = description,
+
 				};
 
 				await _productRepository.AddProduct(product).ConfigureAwait(false);
@@ -113,16 +115,14 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		}
 
 
-		public async Task<IActionResult> CustomerView(int limit = 50 , int sortBy = 0, int page = 0)
+		public async Task<IActionResult> CustomerView(DateTimeOffset? startDate, DateTimeOffset? endDate, int limit = 50 , int sortBy = 0, int page = 1)
 		{
 			ViewData["Title"] = "Customer.View";
-			var customers = await _customerRepository.GetAllCustomers().ConfigureAwait(false);
-			int customer_count = customers.Count();
-			limit = limit > customer_count ? limit : customer_count;
-			int offset = (page - 1) * limit;
+			int customer_count = await _customerRepository.GetCustomersCount().ConfigureAwait(false);
+			int offset = Math.Abs((page - 1) * limit);
             ViewBag.page_count = Math.Ceiling((double)customer_count / limit);
 			
-			ViewBag.Customers = customers;
+			ViewBag.Customers = await _customerRepository.GetAllCustomers(startDate: startDate, endDate: endDate, offset: offset, limit: limit).ConfigureAwait(false);
 			return View();
 		}
 
@@ -140,16 +140,6 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 			return View();
 		}
 
-		public async Task<IActionResult> AdvancedSearch(string address, int customerId, DateTime startDate, DateTime endDate )
-		{
-			if (ModelState.IsValid)
-			{
-
-				return Ok();
-			}
-			return BadRequest();
-		}
-		
 		
 
 	}

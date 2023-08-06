@@ -95,7 +95,7 @@ namespace Stephs_Shop.Controllers
 						_logger.LogInformation("Transaction In Progress");
 						RestClient restClient = new RestClient(_microServiceOption.FlutterWaveUrl);
 						var request = new RestRequest(string.Empty, Method.Post);
-						request.AddHeader("Authorization", $"Bearer");
+						request.AddHeader("Authorization", $"Bearer {_microServiceOption.FlutterWaveApiKey}");
 
 						RestResponse response = restClient.Execute(request);
 						var response_content = JsonConvert.DeserializeObject<RestResponse>(response.Content);
@@ -118,9 +118,8 @@ namespace Stephs_Shop.Controllers
                     }
 					catch (Exception ex)
 					{
-						_logger.LogCritical($"Error Message: {ex.Message}");
-						//throw new Exception(ex.Message);
-						return BadRequest(ex.Message);
+						_logger.LogError($"Error Message: {ex.Message}");
+						return BadRequest($"Error Occurred: {ex.Message}");
 					}
 
 					return Ok();
