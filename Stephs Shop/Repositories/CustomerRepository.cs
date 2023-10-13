@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Stephs_Shop.Models;
 using Stephs_Shop.Models.Entities;
 using Stephs_Shop.Models.Options;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,16 +16,18 @@ namespace Stephs_Shop.Repositories
         Task<Address> GetCustomerAddress(string customerid);
         Task AddAddress(string id, Address address);
         Task UpdateAddress(string id, Address address);
-        Task<IEnumerable<Customer>> GetAllCustomers();
+        Task<IEnumerable<Customer>> GetAllCustomers(DateTimeOffset? startDate = null, DateTimeOffset? endDate = null, int offset = 0, int limit = 0);
         Task<IEnumerable<Customer>> FetchCustomers(string searchTerm);
         Task CreateUserAsync(User userDetails);
 
         Task UpdateContact(string user_id, string contact);
+        Task<int> GetCustomersCount();
 
 
 
 
-    }
+
+	}
     public class CustomerRepository : PgRepository, ICustomerRepository
     {
         public CustomerRepository(IOptions<ConnectionStringOptions> options) : base(options)
@@ -53,7 +56,22 @@ namespace Stephs_Shop.Repositories
             }
         }
 
-        public async Task<IEnumerable<Customer>> GetAllCustomers()
+		public async Task<int> GetCustomersCount()
+		{
+			using (var connection = await GetConnection())
+			{
+				var query = @"
+                 SELECT count(1) from public.customer c
+                 left join public.customer_address ca
+                  on c.id = ca.customer";
+
+
+				return await connection.ExecuteScalarAsync<int>(query);
+			}
+
+		}
+
+		public async Task<IEnumerable<Customer>> GetAllCustomers(DateTimeOffset? startDate = null, DateTimeOffset? endDate = null, int offset = 0, int limit = 0)
         {
             using(var connection = await GetConnection())
             {
@@ -62,8 +80,21 @@ namespace Stephs_Shop.Repositories
                  left join public.customer_address ca
                   on c.id = ca.customer";
 
+                if(startDate != null || endDate != null)
+                {
+                    query += "";
+                }
 
-            return await connection.QueryAsync<Customer>(query);
+                if(limit != 0)
+                {
+                    query += " OFFSET @offset LIMIT @limit ";
+                }
+                
+            return await connection.QueryAsync<Customer>(query, new
+            {
+                offset = offset,
+                limit = limit
+            });
             }
 
         }
@@ -161,8 +192,8 @@ namespace Stephs_Shop.Repositories
         {
             using(var connection = await GetConnection())
             {
-                var query = "insert into public.customer_address(user_id, addressline1, addressline2, addressline3, postalcode)" +
-                    "values(@user, @addressline1, @addressline2, @addressline3, @postalcode)";
+                var query = "INSERT INTO public.customer_address(user_id, addressline1, addressline2, addressline3, postalcode)" +
+                    "VALUES(@user, @addressline1, @addressline2, @addressline3, @postalcode)";
 
                 await connection.ExecuteScalarAsync(query, new
                 {

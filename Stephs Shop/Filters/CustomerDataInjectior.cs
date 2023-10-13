@@ -30,7 +30,7 @@ namespace Stephs_Shop.Filters
 		{
 			var redis = _connectionMultiplexer.GetDatabase(db: -1);
 			var customerData = await redis.StringGetAsync("customers");
-			var customerOrders = await redis.StringGetAsync("customer_order");
+			//var customerOrders = await redis.StringGetAsync("customer_order");
 
 			if (!customerData.HasValue)
 			{
@@ -38,10 +38,7 @@ namespace Stephs_Shop.Filters
 				var customers = await _customerRepository.GetAllCustomers();
 				await redis.StringSetAsync("customers", JsonConvert.SerializeObject(customers));
 			}
-			if (!customerOrders.HasValue)
-			{
-
-			}
+			
 
 			var result = await next();
 		}

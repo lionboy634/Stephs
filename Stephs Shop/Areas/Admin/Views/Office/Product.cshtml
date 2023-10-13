@@ -13,6 +13,8 @@
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
+	 
+	<link rel="stylesheet" href="~/css/loader.css" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
@@ -30,73 +32,8 @@
 
 <body>
 	<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
-					<span class="align-middle">Dashboard </span>
-				</a>
-				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Pages
-					</li>
+		@await Html.PartialAsync("_DashBoardSidebar")
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="index.html">
-							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-						</a>
-					</li>
-
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-blank.html">
-							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Manage Users</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-blank.html">
-							<i class="align-middle" data-feather="package"></i> <span class="align-middle">Manage Products</span>
-						</a>
-					</li>
-
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-blank.html">
-							<i class="align-middle" data-feather="box"></i> <span class="align-middle">Manage orders</span>
-						</a>
-					</li>
-
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms.html">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
-						</a>
-					</li>
-
-					<li class="sidebar-header">
-						Other Services
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts-chartjs.html">
-							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Product Inventory</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google.html">
-							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
 
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
@@ -266,9 +203,11 @@
 					<h1 class="h3 mb-3 text-center">Product Inventory Management</h1>
 					<div class="container">
 
-						<div class="table-responsive">
+						<div class="table-responsive mt-2">
 
-							<table class="table custom-table">
+							@await Html.PartialAsync("_MessageFlash")
+
+							<table class="table custom-table mt-3">
 								<thead>
 									<tr>
 										<th scope="col">
@@ -289,73 +228,29 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<th scope="row">
-											<label class="control control--checkbox">
-												<input type="checkbox" />
-												<div class="control__indicator"></div>
-											</label>
-										</th>
-										<td>
-											1392
-										</td>
-										<td>James Yates</td>
-										<td>
-											Web Designer
-											<small class="d-block">Far far away, behind the word mountains</small>
-										</td>
-										<td>+63 983 0962 971</td>
-										<td>NY University</td>
-									</tr>
-									<tr>
-										<th scope="row">
-											<label class="control control--checkbox">
-												<input type="checkbox" />
-												<div class="control__indicator"></div>
-											</label>
-										</th>
-										<td>4616</td>
-										<td>Matthew Wasil</td>
-										<td>
-											Graphic Designer
-											<small class="d-block">Far far away, behind the word mountains</small>
-										</td>
-										<td>+02 020 3994 929</td>
-										<td>London College</td>
-									</tr>
-									<tr>
-										<th scope="row">
-											<label class="control control--checkbox">
-												<input type="checkbox" />
-												<div class="control__indicator"></div>
-											</label>
-										</th>
-										<td>9841</td>
-										<td>Sampson Murphy</td>
-										<td>
-											Mobile Dev
-											<small class="d-block">Far far away, behind the word mountains</small>
-										</td>
-										<td>+01 352 1125 0192</td>
-										<td>Senior High</td>
-									</tr>
-									<tr>
-										<th scope="row">
-											<label class="control control--checkbox">
-												<input type="checkbox" />
-												<div class="control__indicator"></div>
-											</label>
-										</th>
-										<td>9548</td>
-										<td>Gaspar Semenov</td>
-										<td>
-											Illustrator
-											<small class="d-block">Far far away, behind the word mountains</small>
-										</td>
-										<td>+92 020 3994 929</td>
-										<td>College</td>
-									</tr>
-
+									@foreach(var order in ViewBag.Orders)
+									{
+										<tr>
+											<th scope="row">
+												<label class="control control--checkbox">
+													<input type="checkbox" />
+													<div class="control__indicator"></div>
+												</label>
+											</th>
+											<td>
+												1392
+											</td>
+											<td>James Yates</td>
+											<td>
+												Web Designer
+												<small class="d-block">Far far away, behind the word mountains</small>
+											</td>
+											<td>+63 983 0962 971</td>
+											<td>NY University</td>
+										</tr>
+									}
+									
+									
 								</tbody>
 							</table>
 						</div>
@@ -404,6 +299,7 @@
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 											<button type="button" id="add_product" class="btn btn-primary">Add Product</button>
+											<div class="loader" id="loader"></div>
 											
 										</div>
 									</form>
@@ -424,11 +320,13 @@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/js/app.js"></script>
-	/**
+
 	<script>
-		
+		const loader = document.getElementById('loader');
+		loader.style.display = 'none';
 		document.getElementById("add_product").addEventListener("click", function(){
 			
+			loader.style.display = 'block';
 			var product = {
 				"product":{
 					name: 'product',
@@ -462,10 +360,12 @@
 				//async: true,
 				//cache: false,
 				success: function(data){
-					$("#exampleModal").close();
+					$("#exampleModal").modal('hide');
+					loader.style.display = 'none';
+					
 				}, 
 				error:function(e){
-					console.log(e.status)
+					loader.style.display = 'none';
 					alert(e.status);
 				}
 			})

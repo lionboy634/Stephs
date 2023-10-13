@@ -7,7 +7,11 @@ namespace Stephs_Shop.Models
 {
     public class Cart
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public Product product { get; set; }
-    }
+        public string sessionId { get; set; }
+		public int Quantity { get; set; }
+
+        public decimal price => product.price * Quantity;
+	}
 }

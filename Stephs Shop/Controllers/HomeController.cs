@@ -74,8 +74,6 @@ namespace Stephs_Shop.Controllers
             var current_user = await GetCurrentUser();
             if(current_user == null) return RedirectToAction(nameof(Login), "Home");
 
-            
-
             return View();
         }
 
@@ -266,13 +264,11 @@ namespace Stephs_Shop.Controllers
             {
                return RedirectToAction(nameof(Login));
             }
-            _logger.LogDebug($"Contact Update for {currentuser.Id}");
-            await _customerRepository.UpdateContact(currentuser.Id, contact).ConfigureAwait(false);
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateContact(Customer customer)
+        public async Task<IActionResult> UpdateContact(string contact)
         {
             if (ModelState.IsValid)
             {
@@ -281,7 +277,8 @@ namespace Stephs_Shop.Controllers
                 {
                     return RedirectToAction(nameof(Login));
                 }
-                await _customerRepository.UpdateContact(user.Id, "");
+                await _customerRepository.UpdateContact(user.Id, contact);
+                _logger.LogDebug($"Contact Information Updated Successfully for Customer {user.Id}");
                 return RedirectToAction(nameof(Index));
             }
             return View();

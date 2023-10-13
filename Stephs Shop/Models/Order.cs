@@ -1,4 +1,6 @@
-﻿namespace Stephs_Shop.Models
+﻿using System;
+
+namespace Stephs_Shop.Models
 {
 	public class Order
 	{ 
@@ -7,6 +9,7 @@
 		public bool Delivered { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }	
+		public DateTimeOffset DeletedAt { get; set; }
 
 	}
 	public class OrderItems

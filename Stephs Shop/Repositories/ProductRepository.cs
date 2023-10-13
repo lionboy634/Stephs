@@ -20,6 +20,8 @@ namespace Stephs_Shop.Repositories
         Task<IEnumerable<Product>> GetProducts( int limit = 0, int offset = 0);
         Task<bool> CheckProductExists(int id);
         Task<IEnumerable<ProductCategory>> GetProductCategory();
+        Task UpdateUploadedImage(int productId, FileStackResponse product);
+        Task AddProductToInventory(int productId, int quantity);
 
 	}
 
@@ -36,13 +38,10 @@ namespace Stephs_Shop.Repositories
             using(var connection = await GetConnection())
             {
                 var query = @"
-                    WITH new_product as(
-                        INSERT INTO public.product(name, image_url, price, description, category_id, inventory_id)
-                        VALUES(@Name, @Imageurl, @Price, @Description, @CategoryId, @InventoryId)  returning category_id
-                    );
-                    UPDATE TABLE public.product_inventory
-                    SET quantity = (select quantity + 1 from public.product_inventory where id = select category_id from new_product)
-                    WHERE id = (select category_id from new_product) ";
+                   
+                        INSERT INTO public.product(name, image_url, price,  category_id, inventory_id)
+                        VALUES(@Name, @Imageurl, @Price, 1, 1000)  returning id
+                    ";
                 return await connection.ExecuteScalarAsync<int>(query, new
                 {
                     Name = product.name,
@@ -187,7 +186,7 @@ namespace Stephs_Shop.Repositories
             using (var connection = await GetConnection())
             {
                 var query = @"
-                 SELECT id, name from public.product 
+                 SELECT * from public.product 
                      WHERE id = @Id
                      offset @Offset
                      LIMIT @Limit
@@ -204,6 +203,41 @@ namespace Stephs_Shop.Repositories
 
         }
 
+        public async Task UpdateUploadedImage(int productId, FileStackResponse product)
+        {
+            using(var connection = await GetConnection())
+            {
+				var query = @"
+                 UPDATE public.product
+                    SET image_url = @imageUrl,
+                        filepath = @filePath,
+                        updated_at = NOW()
+                    where id = @productId
+                ";
+
+                await connection.ExecuteScalarAsync(query, new
+                {
+                    productId = productId,
+                    filePath = product.Filename,
+                    imageUrl = product.Url
+                });
+			}
+           
+
+        }
+
+        public async Task AddProductToInventory(int productId, int quantity)
+        {
+            using(var connection = await GetConnection())
+            {
+                var query = @"
+                 INSERT INTO public.product_inventory(quantity, created_at, updated_at, inventory_name)
+                            VALUES(@Quantity, NOW(), NOW(), "")
+                ";
+                await connection.ExecuteScalarAsync(query);
+            }
+
+        }
     }
 }
 

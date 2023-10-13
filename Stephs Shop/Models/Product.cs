@@ -14,6 +14,7 @@ namespace Stephs_Shop.Models
         public string image_url { get; set; }
         public int inventory_id { get; set; }
         public int category_id { get; set; }
+        public string filename { get; set; }
         public DateTimeOffset created_at { get; set; }
         public DateTimeOffset modified_at { get; set; }
         public DateTimeOffset deleted_at { get; set; }
