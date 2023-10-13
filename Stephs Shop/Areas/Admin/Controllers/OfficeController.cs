@@ -68,50 +68,66 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
 		[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-		public async Task<IActionResult> AddProduct(string name, string description, IFormFile image , decimal price)
-																																																																																																																																							{
-			if (ModelState.IsValid)
+		public async Task<IActionResult> AddProduct(string name, string description, IFormFile image, decimal price)
+		{
+			try
 			{
-				var filename = image.FileName;
-				var filePath = Path.Combine("~/uploads", filename);
-				var content = filename.Split(".")[1];
-				var contentType = image.ContentType;
-				List<Binary> binary = new List<Binary>();
-				List<byte[]> filebytes =  new List<byte[]>();
-				if (! new[]{ "png", "jpg", "jpeg" }.Contains(content))
+				if (ModelState.IsValid)
 				{
-					return BadRequest("File type must be jpg or png");
-				}
-				
-				//file must not be greater than 7MB
-				if(image.Length < 0 && image.Length > 7340032)
-				{
-					return BadRequest("Image size must not be more than 3mb");
-				}
-				using(var filestream = image.OpenReadStream())
-				using(MemoryStream ms = new MemoryStream())
-				{
-					filestream.CopyTo(ms);
-					//binary.Add(ms.ToArray());
-					filebytes.Add(ms.ToArray());
-					Binary fileBinary = new Binary(ms.ToArray(), filename);
-					_fileService.uploadFile(fileBinary);
-					_logger.LogDebug("File Uploaded Successfully");
-				}
-				Product product = new Product
-				{
-					price = price,
-					name = name,
-					description = description,
+					var filename = image.FileName;
+					var filePath = Path.Combine("~/uploads", filename);
+					var content = filename.Split(".")[1];
+					var contentType = image.ContentType;
+					List<Binary> binary = new List<Binary>();
+					List<byte[]> filebytes = new List<byte[]>();
+					if (!new[] { "png", "jpg", "jpeg" }.Contains(content))
+					{
+						return BadRequest("File type must be jpg or png");
+					}
 
-				};
+					//file must not be greater than 7MB
+					if (image.Length <= 0 || image.Length > 7340032)
+					{
+						return BadRequest("Image size must not be more than 3mb");
+					}
+					using (var filestream = image.OpenReadStream())
+					using (MemoryStream ms = new MemoryStream())
+					{
+						filestream.CopyTo(ms);
+						//binary.Add(ms.ToArray());
+						filebytes.Add(ms.ToArray());
+						Binary fileBinary = new Binary(ms.ToArray(), filename);
+						Product product = new Product
+						{
+							price = price,
+							name = name,
+							description = description,
 
-				await _productRepository.AddProduct(product).ConfigureAwait(false);
-				_logger.LogInformation("Product created successfully");
-				return Ok("Product Added successfully");
+						};
+
+						int productId = await _productRepository.AddProduct(product).ConfigureAwait(false);
+						await _fileService.uploadFile(fileBinary, productId).ConfigureAwait(false);
+
+						_logger.LogDebug("File Uploaded Successfully");
+					}
+					
+					TempData["Message"] = "Product Added Successfully";
+					TempData["MessageType"] = "success";
+
+
+					return Ok("Product Added successfully");
+				}
+
+				return BadRequest("Error While Adding New Product");
 			}
-
-			return BadRequest("Error While Adding New Product");
+			catch(Exception ex)
+			{
+				_logger.LogError(ex.Message);
+				return BadRequest("Oops. Something Happened.");
+			}
+			
+				
+			
 		}
 
 

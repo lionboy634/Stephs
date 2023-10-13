@@ -12,6 +12,7 @@ using Stephs_Shop.Models.Options;
 using Stephs_Shop.Repositories;
 using Stephs_Shop.Services;
 using System;
+using System.Dynamic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ using System.Transactions;
 
 namespace Stephs_Shop.Controllers
 {
-	[Authorize]
+	//[Authorize]
 	public class CustomerController : BaseController
 	{
 		private readonly ICustomerRepository _customerRepository;
@@ -72,7 +73,7 @@ namespace Stephs_Shop.Controllers
 				{
 					return BadRequest("Quantity must be more than zero");
 				}
-				decimal sum = 0;
+				decimal sum = 0m;
 				foreach(var item in products)
 				{
 					var product = await _productRepository.GetProduct(item.id).ConfigureAwait(false);
@@ -87,8 +88,7 @@ namespace Stephs_Shop.Controllers
 				{
 					return BadRequest("Amount paid is less the price of products");
 				}
-				
-				using (var scope = new TransactionScope(TransactionScopeOption.Required , new TransactionOptions{	IsolationLevel = IsolationLevel.ReadUncommitted}))
+				using (var scope = new TransactionScope(TransactionScopeOption.Required , new TransactionOptions{	IsolationLevel = IsolationLevel.ReadUncommitted}, TransactionScopeAsyncFlowOption.Enabled))
 				{
 					try
 					{
@@ -96,7 +96,19 @@ namespace Stephs_Shop.Controllers
 						RestClient restClient = new RestClient(_microServiceOption.FlutterWaveUrl);
 						var request = new RestRequest(string.Empty, Method.Post);
 						request.AddHeader("Authorization", $"Bearer {_microServiceOption.FlutterWaveApiKey}");
+						dynamic body = new ExpandoObject();
+						body.public_key = "";
+						body.tx_ref = "";
+						body.amount = sum;
+						body.tx_ref = Guid.NewGuid();
+						body.redirect_url = new Uri("http://localhost:5000/verify");
+						body.customer = new
+						{
+							email = user.Email,
+							phone_number = user.PhoneNumber
 
+						};
+						
 						RestResponse response = restClient.Execute(request);
 						var response_content = JsonConvert.DeserializeObject<RestResponse>(response.Content);
 						if (!response_content.IsSuccessStatusCode)
@@ -127,6 +139,13 @@ namespace Stephs_Shop.Controllers
 			}
 			return BadRequest();
 			
+		}
+
+		[HttpGet]
+		public IActionResult Cart()
+		{
+			ViewData["Title"] = "Cart.Page";
+			return View();
 		}
 	}
 }

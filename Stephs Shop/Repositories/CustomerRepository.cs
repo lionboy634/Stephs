@@ -192,8 +192,8 @@ namespace Stephs_Shop.Repositories
         {
             using(var connection = await GetConnection())
             {
-                var query = "insert into public.customer_address(user_id, addressline1, addressline2, addressline3, postalcode)" +
-                    "values(@user, @addressline1, @addressline2, @addressline3, @postalcode)";
+                var query = "INSERT INTO public.customer_address(user_id, addressline1, addressline2, addressline3, postalcode)" +
+                    "VALUES(@user, @addressline1, @addressline2, @addressline3, @postalcode)";
 
                 await connection.ExecuteScalarAsync(query, new
                 {

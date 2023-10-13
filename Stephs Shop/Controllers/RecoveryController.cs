@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Stephs_Shop.Models.Entities;
 using Stephs_Shop.Services;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Stephs_Shop.Controllers
@@ -14,14 +16,18 @@ namespace Stephs_Shop.Controllers
 		private readonly SignInManager<User> _signInManager;
 		private readonly ISmsSender _smsSender;
 		private readonly IEmailSender _emailSender;
+		private readonly ILogger _logger;
 		public RecoveryController(UserManager<User> userManager, 
 			SignInManager<User> signInManager,
-			IEmailSender emailSender, ISmsSender smsSender) : base(userManager, signInManager)
+			IEmailSender emailSender,
+			ISmsSender smsSender,
+			ILogger logger) : base(userManager, signInManager)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
 			_emailSender = emailSender;
 			_smsSender = smsSender;
+			_logger = logger;
 		}
 
 		public async Task<IActionResult> RecoverPassword(string Email)
@@ -32,7 +38,7 @@ namespace Stephs_Shop.Controllers
 				return BadRequest("Email Doesnt Exists");
 			}
 			Uri recoverpasswordUrl = new Uri($"http://localhost:5000/recovery/resetpassword/{user.Id}");
-			EmailMessage emailMessage = new EmailMessage();
+			EmailSender.EmailMessage emailMessage = new EmailSender.EmailMessage();
 			emailMessage.subject = "Password Recovery";
 			emailMessage.To.Add(Email);
 			emailMessage.message = recoverpasswordUrl.ToString();
@@ -63,26 +69,36 @@ namespace Stephs_Shop.Controllers
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status200OK)]
-		public async Task<IActionResult> ResetPassword(string id, string password)
+		public async Task<IActionResult> ResetPassword(User user)
 		{
-			var user = await GetCurrentUser();
-			if (user == null) return NotFound();
+			try
+			{
+				var foundUser = await _userManager.FindByEmailAsync(user.Email);
+				if (foundUser == null)
+				{
+					return NotFound("User Does not Exist");
+				}
+				var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+				var message = new EmailSender.EmailMessage
+				{
+					from = "",
+					message = token,
+					subject = "Password Reset Confirmation"
+				};
+				message.To.Add(foundUser.Email);
+				_emailSender.SendEmail(message);
+				return RedirectToAction();
+
+			}
+			catch(Exception ex)
+			{
+				_logger.LogError($"Error: {ex.Message}");
+				return BadRequest("Error: Something Went Wrong");
+			}
 			
-			await _userManager.ResetPasswordAsync(user, "", password);
-
-			return Ok();
 		}
 
 
-
-		[HttpDelete]
-		public async Task<IActionResult> DeleteAccount()
-		{
-			var user = await GetCurrentUser();
-			if (user == null) return RedirectToAction("Login", "Home");
-			await _userManager.DeleteAsync(user);
-			return RedirectToAction("Index", "Home");
-		}
 
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status200OK)]

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Stephs_Shop.Repositories;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace Stephs_Shop.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize]
 	public class TransactionController : Controller
 	{
 		private readonly IOrderRepository _orderRepository;
@@ -26,11 +28,9 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 		public async Task<IActionResult> OrderView(int limit = 100, int sortBy = 0, int page = 1)
 		{
 			ViewData["Title"] = "Orders.View";
-			var orders = await _orderRepository.GetAllOrders();
+			var orders = await _orderRepository.GetAllOrders().ConfigureAwait(false);
 			var order_count = orders.Count();
 			page = order_count > limit ? page : limit;
-
-
 
 			return View();
 		}
@@ -79,14 +79,12 @@ namespace Stephs_Shop.Areas.Admin.Controllers
 			return Ok("Order Status Updated");
 		}
 
-
-		private string GenerateReference(string transactionType)
+		public async Task<IActionResult> GenerateReceipt()
 		{
-			DateTime date = new DateTime().Date;
-
-			return $"0000-{date}-{date}";
+			return File("", "application/pdf");
 		}
 
+		
 		
 	}
 }

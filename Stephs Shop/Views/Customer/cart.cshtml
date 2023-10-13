@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+@await Html.PartialAsync("_Header")
+
+
+    <main>
+        <section class="cart">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product Name 1</td>
+                        <td>$20.00</td>
+                        <td>
+                            <input type="number" value="1" min="1">
+                        </td>
+                        <td>$20.00</td>
+                        <td>
+                            <button class="remove-button">Remove</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows for additional products -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <p>Total: $20.00</p>
+                <button class="checkout-button">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</html>

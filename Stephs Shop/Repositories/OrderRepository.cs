@@ -12,7 +12,7 @@ namespace Stephs_Shop.Repositories
 	public interface IOrderRepository
 	{
 		Task UpdateOrderDeliveryStatus(int orderId);
-		Task<IEnumerable<Order>> GetAllOrders(int limit = 100);
+		Task<IEnumerable<Order>> GetAllOrders(int limit = 100, int offset = 0);
 		Task<Order> GetOrderById(string id);
 		Task<long> AddOrderDetail(string user, decimal total);
 		Task AddOrderItem();
@@ -25,7 +25,7 @@ namespace Stephs_Shop.Repositories
 
 		}
 		
-		public async Task<IEnumerable<Order>> GetAllOrders(int limit = 100)
+		public async Task<IEnumerable<Order>> GetAllOrders(int limit = 100, int offset = 0)
 		{
 
 			using(var connection = await GetConnection())
@@ -33,18 +33,20 @@ namespace Stephs_Shop.Repositories
 				var query = @"
 					SELECT
 					o.*
-					from public.customer_order_details o
-					 join public.customer_order_items i
-					 on o.id = i.order_id
-					 join public.customer c
-					 on c.id = o.user_id
-					 join public.product p
-					 on p.id = i.product_id
-					 ORDER BY o.id
-					 LIMIT @Limit ";
+						from public.customer_order_details o
+						 JOIN public.customer_order_items i
+						 on o.id = i.order_id
+						 JOIN public.customer c
+						 on c.id = o.user_id
+						 JOIN public.product p
+						 on p.id = i.product_id
+						 ORDER BY o.id
+						 OFFSET @Offset
+						 LIMIT @Limit ";
 
 				return await connection.QueryAsync<Order>(query, new
 				{
+					Offset = offset,
 					Limit = limit
 				});
 			}

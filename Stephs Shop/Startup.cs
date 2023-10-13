@@ -64,7 +64,8 @@ namespace Stephs_Shop
             services.AddScoped<ISmsSender, SmsSender>();
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IFileService, FileService>();
-
+            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
 
             var connection = ConnectionMultiplexer.Connect("localhost");
             services.AddSingleton<IConnectionMultiplexer>(connection);
@@ -84,7 +85,7 @@ namespace Stephs_Shop
             });
             
 
-			//  services.AddSession();
+			services.AddSession();
 
 
 			services.AddControllersWithViews();
@@ -117,7 +118,7 @@ namespace Stephs_Shop
 
 			app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseSession();
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseRouting();
